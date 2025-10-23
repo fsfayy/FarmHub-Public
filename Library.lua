@@ -690,7 +690,7 @@ labelText.Position = UDim2.new(0.0488, 0, 0, 0)
 labelText.Size = UDim2.new(0, 156, 0, 27)
 labelText.Parent = label
 
-function insidelabel:Set(SetInfo)
+function insidelabel:SetText(SetInfo)
 SetInfo.Text = SetInfo.Text or labelText.Text
 SetInfo.Color = SetInfo.Color or labelText.TextColor3
 
@@ -1021,6 +1021,10 @@ function insidetoggle:Set(bool)
         TweenService:Create(toggleFrame, TweenInfo.new(.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {BackgroundColor3 = Color3.fromRGB(48, 207, 106)}):Play()
     end
     pcall(Info.Callback, Toggled)
+end
+
+function insidetoggle:SetText(text)
+    toggleText.Text = text
 end
 
 if Info.Default then
