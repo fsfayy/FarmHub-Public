@@ -963,6 +963,7 @@ toggleText.Font = Enum.Font.GothamBold
 toggleText.Text = Info.Text
 toggleText.TextColor3 = Color3.fromRGB(217, 217, 217)
 toggleText.TextSize = 11
+toggleText.RichText = true
 toggleText.TextXAlignment = Enum.TextXAlignment.Left
 toggleText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 toggleText.BackgroundTransparency = 1
