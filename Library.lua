@@ -168,6 +168,7 @@ local window = {}
 local FarmHubUIScreenGui = Instance.new("ScreenGui")
 FarmHubUIScreenGui.Name = "FarmHubUI"
 FarmHubUIScreenGui.Parent = gethui()
+FarmHubUIScreenGui.Enabled = false
 
 local tooltipScreenGui = Instance.new("ScreenGui")
 tooltipScreenGui.Name = "Tooltips"
@@ -1709,6 +1710,10 @@ uIStroke2.Name = "UIStroke"
 uIStroke2.Color = Color3.fromRGB(61, 61, 61)
 uIStroke2.Parent = main
 
+function window:Show()
+	FarmHubUIScreenGui.Enabled = true
+end
+	
 return window
 end
 
