@@ -51,11 +51,10 @@ local isfolder = isfolder or syn_isfolder or is_folder
 local makefolder = makefolder or make_folder or createfolder or create_folder
 
 if not isfolder("FarmHubUI") then
-local download = Instance.new("ScreenGui")
+local download = Instance.new("ScreenGui", gethui())
 download.Name = "Download"
 download.Enabled = true
 download.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-download.Parent = gethui()
 
 local dMain = Instance.new("Frame")
 dMain.Name = "DMain"
@@ -165,14 +164,25 @@ Info.Text = Info.Text or "FarmHubUI"
 
 local window = {}
 
-local FarmHubUIScreenGui = Instance.new("ScreenGui")
+local FarmHubUIScreenGui = nil;
+local tooltipScreenGui = nil;
+
+while not pcall(function()
+    FarmHubUIScreenGui = Instance.new("ScreenGui", gethui())
+end) do
+    wait(0.001)
+end
+
+while not pcall(function()
+    tooltipScreenGui = Instance.new("ScreenGui", gethui())
+end) do
+    wait(0.001)
+end
+
 FarmHubUIScreenGui.Name = "FarmHubUI"
-FarmHubUIScreenGui.Parent = gethui()
 FarmHubUIScreenGui.Enabled = false
 
-local tooltipScreenGui = Instance.new("ScreenGui")
 tooltipScreenGui.Name = "Tooltips"
-tooltipScreenGui.Parent = gethui()
 
 local function Tooltip(text)
 local tooltip = Instance.new("Frame")
